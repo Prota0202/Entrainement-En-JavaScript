@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>To Do List</title>
+</head>
+    <body>
+        <div class="déplacementbloc"></div>
+            <header>
+                <h1>Mockup<h1>
+                <img src="/fruit.webp" alt="" height = "200" width="300">
+            </header>
+
+            <main>
+                <section>
+                    <h2>Liste des articles acheté</h2>
+                </section>
+
+                <section>
+                    <ul>
+                        <% for (task of tasks) { %>
+                            <li>Name : <%= task.Name %>, Quantité : <%= task.Quantity %> -
+                                <a href="/delete/<%= task.id %>">Supprimer</a> <!--balise EJS--> <!--On crée un lien de suppression pour chaque tâche-->
+                            </li>
+                        <% } %>
+                    </ul>
+                </section>
+
+                <h2>Liste des articles</h2>
+            </section>
+
+            <section>
+                <ul>
+                    <% for(task of liste) { %>
+                        <li>Name : <%= task.Name %>, Quantité : <%= task.Quantity %> -
+                            <a href="/delete/<%= task.id %>">Supprimer</a> - <a href="/buy/<%= task.id %>">Acheter</a></li>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>                
+            
+                <section>
+                    <form action="/add" method="Post"> <!--Balise permettant de créer un formulaire-->
+                        <h3>Ajouter un article:</h3>
+                        <!--action nous montre le chemin pour lequel le formulaire sera soumis. C'est-à-dire que le chemin est /add-->
+                        <input type="text" name="Name" placeholder="Name" required>
+                        <input type="number" name="Quantity" placeholder="Quantity" required>
+                        <input type="submit" value="Ajouter">
+                    </form>
+                </section>
+            </main>
+        </div>  
+    </body>
+</html>

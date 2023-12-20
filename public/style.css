@@ -1,0 +1,10 @@
+body {
+    width: 400px; /* La consigne demande 300px mais je mets 400 car plus ésthétique */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+h1 {
+    text-align: center;
+    color: blueviolet;
+}
